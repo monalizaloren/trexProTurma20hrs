@@ -10,8 +10,9 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 
 var score;
 
-var gameOverImg,restartImg
-var jumpSound , checkPointSound, dieSound
+var gameOverImg,restartImg;
+//Crie as variáveis 'jumpSound', 'checkPointSound' e 'dieSound'
+//???
 
 
 function preload(){
@@ -33,8 +34,8 @@ function preload(){
   gameOverImg = loadImage("gameOver.png")
   
   jumpSound = loadSound("jump.mp3")
-  dieSound = loadSound("die.mp3")
-  checkPointSound = loadSound("checkPoint.mp3")
+  //Na linha acima você está carregando o som para a variável 'jumpSound'
+  //Carregue o som para as variáveis 'checkPointSound' e 'dieSound'
 }
 
 function setup() {
@@ -65,11 +66,6 @@ function setup() {
   obstaclesGroup = createGroup();
   cloudsGroup = createGroup();
   
-  console.log("Hello" + 5);
-  
-  trex.setCollider("circle",0,0,40);
-  trex.debug = true
-  
   score = 0;
   
 }
@@ -77,10 +73,8 @@ function setup() {
 function draw() {
   
   background(180);
-  //exibindo pontuação
-  text("Pontuação: "+ score, 500,50);
-  
-  console.log("this is ",gameState)
+  //Nas interrogações coloque a variávl que gaurda a pontuação
+  text("Pontuação: "+ ???, 500,50);
   
   
   if(gameState === PLAY){
@@ -114,17 +108,16 @@ function draw() {
     }
   }
    else if (gameState === END) {
-     console.log("hey")
+  
       gameOver.visible = true;
       restart.visible = true;
      
-      ground.velocityX = 0;
-      trex.velocityY = 0
+      //Defina a velocidade do ground e do trex para 0
+      //???
      
       //mudar a animação do trex
       trex.changeAnimation("collided", trex_collided);
      
-      //definir tempo de vida aos objetos do jogo para que nunca sejam destruídos
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
      
